@@ -1,0 +1,58 @@
+{
+    "events": [
+      {
+        "id": "1",
+        "title": "Tech Expo 2023",
+        "tagline": "Discover the Future of Technology",
+        "image_link": "https://i.ibb.co/Vw0f2mx/img-1.jpg",
+        "entry_fee": "$50",
+        "event_date_time": "2023-11-15",
+        "description": "Join us for Tech Expo 2023, where you'll explore the latest advancements in technology. Our carefully curated event features cutting-edge innovations, expert speakers, and networking opportunities. Don't miss out on this tech extravaganza!"
+      },
+      {
+        "id": "2",
+        "title": "AI Summit 2024",
+        "tagline": "Unleash the Power of Artificial Intelligence",
+        "image_link": "https://i.ibb.co/bsNLZ9Z/img-6.jpg",
+        "entry_fee": "$75",
+        "event_date_time": "2024-04-20",
+        "description": "AI Summit 2024 is your gateway to the world of artificial intelligence. Immerse yourself in the latest AI trends, attend workshops, and connect with industry leaders. Get ready to revolutionize your understanding of AI!"
+      },
+      {
+        "id": "3",
+        "title": "Web Developers Conference",
+        "tagline": "Master the Web Development Landscape",
+        "image_link": "https://i.ibb.co/H7FfLwj/img-5.jpg",
+        "entry_fee": "$60",
+        "event_date_time": "2023-09-05",
+        "description": "The Web Developers Conference is the ultimate gathering for web development enthusiasts. Dive into the web development ecosystem, learn from experts, and enhance your skills. Join us for a web revolution!"
+      },
+      {
+        "id": "4",
+        "title": "Blockchain Expo 2024",
+        "tagline": "Unlocking the Potential of Blockchain",
+        "image_link": "https://i.ibb.co/7Rrz4K7/img-3.jpg",
+        "entry_fee": "$70",
+        "event_date_time": "2024-06-10",
+        "description": "Blockchain Expo 2024 is where blockchain enthusiasts come together. Explore the world of decentralized technologies, network with blockchain pioneers, and discover the endless possibilities of blockchain!"
+      },
+      {
+        "id": "5",
+        "title": "Cybersecurity Summit",
+        "tagline": "Securing the Digital Frontier",
+        "image_link": "https://i.ibb.co/HTJdMnJ/img-2.jpg",
+        "entry_fee": "$55",
+        "event_date_time": "2023-12-03",
+        "description": "Join us at the Cybersecurity Summit to learn about the latest cybersecurity threats and solutions. Connect with cybersecurity experts and protect your digital assets effectively!"
+      },
+      {
+        "id": "6",
+        "title": "Cloud Computing Conference",
+        "tagline": "Navigating the Cloud Revolution",
+        "image_link": "https://i.ibb.co/wLKZtCR/img-4.jpg",
+        "entry_fee": "$65",
+        "event_date_time": "2023-10-20",
+        "description": "The Cloud Computing Conference is your gateway to the cloud revolution. Discover cloud technologies, hear from industry leaders, and gain insights into the future of cloud computing!"
+      }
+    ]
+  }
