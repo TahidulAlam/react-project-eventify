@@ -30,7 +30,7 @@ const Clients = () => {
         },
       }}
       extensions={{ AutoScroll }}
-      className="p-10 rounded-lg bg-white"
+      className="lg:p-10 p-3 rounded-lg bg-white"
     >
       <SplideSlide>
         <img src="https://i.ibb.co/7X4bPsQ/Untitled-1.png" alt="Image 1" />

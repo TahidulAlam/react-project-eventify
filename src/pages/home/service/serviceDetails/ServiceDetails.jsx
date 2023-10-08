@@ -25,10 +25,10 @@ const ServiceDetails = () => {
   const { id } = service;
   return (
     <div className=" text-blue-800 bg-slate-100">
-      <h1 className="text-center font-bold py-4 text-4xl text-blue-800">
+      <h1 className="text-center font-bold py-4 lg:text-4xl text-2xl text-blue-800">
         {service.title}
       </h1>
-      <div className="grid grid-cols-2 gap-3 place-content-start w-[95%] mx-auto my-5">
+      <div className="grid lg:grid-cols-2 grid-cols-1 gap-3 place-content-start w-[95%] mx-auto my-5">
         <div>
           <img className="rounded-lg" src={service.image} alt="" />
         </div>

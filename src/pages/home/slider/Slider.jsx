@@ -33,28 +33,13 @@ const Slider = ({ eventData }) => {
       >
         {eventData.map((slide, index) => (
           <SwiperSlide key={index}>
-            <img src={slide.image_link} alt="" />
-            {/* <div className="absolute z-50">
-              <div className="flex flex-col items-center justify-center  gap-2 glass rounded-lg p-5">
-                <div>
-                  <div className="mx-auto">
-                    <img
-                      style={{ height: "300px", width: "500px" }}
-                      src={slide.image_link}
-                      alt=""
-                    />
-                    <Clock deadline={slide.event_date}></Clock>
-                  </div>
-                </div>
-
-                <h1 className="font-semibold text-4xl text-white ">
-                  {slide.title}
-                </h1>
-                <button className="btn btn-outline bg-white">Join Now</button>
-              </div>
-            </div> */}
-
-            <div className="hero-overlay absolute bg-[#002B84] rounded-md h-[400px] w-[85%] mx-auto "></div>
+            <img
+              style={{ zIndex: "100" }}
+              className="block w-[95%] rounded-md md:w-3/4 lg:w-75% xl:w-75% mx-auto h-500px sm:h-auto md:h-auto  rounded-10"
+              src={slide.image_link}
+              alt=""
+            />
+            <div className="hero-overlay absolute bg-[#002B84] rounded-md lg:h-[400px] w-[85%] mx-auto "></div>
           </SwiperSlide>
         ))}
       </Swiper>

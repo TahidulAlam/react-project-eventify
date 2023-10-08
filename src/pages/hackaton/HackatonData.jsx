@@ -13,7 +13,7 @@ const HackatonData = ({ data }) => {
   }, [hackathonSupport]);
   return (
     <div>
-      <div className="grid grid-cols-3 w-[95%] mx-auto gap-5 mb-10">
+      <div className="grid lg:grid-cols-3 grid-col-1 w-[95%] mx-auto lg:gap-5 gap-3 lg:mb-10">
         {Array.isArray(datahackaton) ? (
           datahackaton?.map((item, index) => (
             <HackatonCard key={index} datahackathon={item}></HackatonCard>

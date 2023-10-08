@@ -7,7 +7,7 @@ const HackatonCard = ({ datahackathon }) => {
   return (
     <div>
       <div>
-        <div className="bg-white p-5 rounded-lg h-[420px] mt-10 mb-10 flex flex-col">
+        <div className="bg-white p-5 rounded-lg h-[420px] lg:mt-10 lg:mb-10 mb-2 mt-2 flex flex-col">
           <h1 className="font-semibold bg-blue-800 rounded-lg text-xl text-white p-2 text-center">
             {name}
           </h1>

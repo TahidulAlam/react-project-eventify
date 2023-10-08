@@ -7,15 +7,6 @@ import { signOut } from "firebase/auth";
 
 const Navbar = () => {
   const { user, signInOut } = useAuth();
-  // const handleSignOut = (signInOut) => {
-  //   signOut(signInOut)
-  //     .then(() => {
-  //       console.log("sign out successfully");
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // };
   return (
     <div>
       <div className="navbar bg-blue-800 z-50 max-w-7xl mx-auto text-white">
@@ -39,116 +30,73 @@ const Navbar = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-md dropdown-content mt-3 z-[1] p-2 rounded-box w-auto"
+              className="menu menu-lg dropdown-content mt-3 z-[120] p-2 bg-white rounded-box w-[250px]"
             >
               <li>
-                <NavLink
-                  to={"/news"}
-                  activeClassName="bg-white text-blue-700"
-                  className="text-white"
-                >
-                  News
+                <NavLink to={"/"} className="text-black">
+                  Home
                 </NavLink>
               </li>
               <li>
-                <NavLink
-                  to={"/event"}
-                  activeClassName="bg-white text-blue-700"
-                  className="text-white"
-                >
+                <NavLink to={"/event"} className="text-black">
                   Event
                 </NavLink>
               </li>
               <li>
-                <NavLink
-                  to={"/services"}
-                  activeClassName="bg-white text-blue-700"
-                  className="text-white"
-                >
+                <NavLink to={"/services"} className="text-black">
                   services
                 </NavLink>
               </li>
               <li>
-                <NavLink
-                  to={"/blog"}
-                  activeClassName="bg-white text-blue-700"
-                  className="text-white"
-                >
+                <NavLink to={"/blog"} className="text-black">
                   Blog
                 </NavLink>
               </li>
               <li>
-                <NavLink
-                  to={"/contact"}
-                  activeClassName="bg-white text-blue-700"
-                  className="text-white"
-                >
+                <NavLink to={"/contact"} className="text-black">
                   Contact
                 </NavLink>
               </li>
             </ul>
           </div>
-          <div className="flex gap-3">
-            <AiOutlineFieldTime className="text-4xl text-white" />
-            <a className="normal-case text-3xl text-white backdrop-filter">
-              Eventify
-            </a>
+          <div>
+            <Link className="flex gap-3" to="/">
+              <AiOutlineFieldTime className="text-4xl text-white" />
+              <a className="normal-case text-3xl text-white backdrop-filter">
+                Eventify
+              </a>
+            </Link>
           </div>
         </div>
         <div className="navbar w-[60%] flex-row lg:justify-around justify-end">
           <ul className="menu menu-horizontal hidden lg:flex px-1">
             <li>
-              <NavLink
-                to={"/"}
-                exact
-                activeClassName="bg-white text-blue-700"
-                className="text-white"
-              >
+              <NavLink to={"/"} exact className="text-white">
                 home
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to={"/about"}
-                activeClassName="bg-white text-blue-700"
-                className="text-white"
-              >
+              <NavLink to={"/about"} className="text-white">
                 about
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to={"/event"}
-                activeClassName="bg-white text-blue-700"
-                className="text-white"
-              >
+              <NavLink to={"/event"} className="text-white">
                 Event
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to={"/services"}
-                activeClassName="bg-white text-blue-700"
-                className="text-white"
-              >
+              <NavLink to={"/services"} className="text-white">
                 Services
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to={"/blog"}
-                activeClassName="bg-white text-blue-700"
-                className="text-white"
-              >
+              <NavLink to={"/blog"} className="text-white">
                 Blog
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to={"/contact"}
-                activeClassName="bg-white text-blue-700"
-                className="text-white"
-              >
+              <NavLink to={"/contact"} className="text-white">
                 Contact
               </NavLink>
             </li>

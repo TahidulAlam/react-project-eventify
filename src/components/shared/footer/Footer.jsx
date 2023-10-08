@@ -8,8 +8,8 @@ const Footer = () => {
       <footer className="footer footer-center p-10 bg-blue-800 text-primary-content">
         <aside>
           <div className="flex justify-center items-center p-10">
-            <AiOutlineFieldTime className="text-8xl text-white p-1" />
-            <a className="font-semibold text-5xl text-white backdrop-filter p-1">
+            <AiOutlineFieldTime className="lg:text-8xl text-6xl text-white p-1" />
+            <a className="font-semibold lg:text-5xl text-4xl text-white backdrop-filter p-1">
               Eventify
             </a>
           </div>

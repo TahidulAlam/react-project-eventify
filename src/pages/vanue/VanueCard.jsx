@@ -6,28 +6,28 @@ const VanueCard = ({ vanueData }) => {
   console.log(vanueData);
   return (
     <div>
-      <div className="p-3 bg-white flex flex-col gap-2 mb-3 rounded-lg">
+      <div className="p-10 bg-white flex flex-col gap-2 mb-3 rounded-lg">
         <div>
-          <h1>
+          <h1 className="text-2xl p-5">
             Vanue Name :{" "}
-            <span className="font-semibold text-slate-700">
+            <span className="font-semibold text-slate-700 ">
               {vanueData.venueName}
             </span>{" "}
           </h1>
-          <h1>
+          <h1 className="p-1">
             Capacity:{" "}
             <span className="font-semibold text-slate-700">
               {vanueData.capacity}
             </span>{" "}
           </h1>
-          <h1>
+          <h1 className="p-1">
             Location:{" "}
-            <span className="font-semibold text-slate-700">
+            <span className="font-semibold text-slate-700 ">
               {" "}
               {vanueData.location}
             </span>
           </h1>
-          <h1>
+          <h1 className="p-1">
             Price:{" "}
             <span className="font-semibold text-slate-700">
               {" "}

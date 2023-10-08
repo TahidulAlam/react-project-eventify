@@ -12,7 +12,7 @@ const SpeakerData = ({ data }) => {
 
   return (
     <div>
-      <div className="grid grid-cols-3 gap-5 place-content-center w-[95%] mx-auto my-10">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 place-content-center w-[95%] mx-auto my-10">
         {Array.isArray(speakerdata) ? (
           speakerdata?.map((item, index) => (
             <SpeakerCard key={index} dataSpeaker={item}></SpeakerCard>

@@ -6,8 +6,7 @@ const ServiceCounter = () => {
   return (
     <div>
       <div style={{ fontSize: "150px" }}>
-        <CountUp start={0} end={150} duration={3} />
-        <CountUp start={0} end={250} duration={3} />
+        <CountUp start={20} end={150} duration={4} />
       </div>
     </div>
   );

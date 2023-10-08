@@ -11,7 +11,7 @@ const BoothData = ({ data }) => {
   }, [exhibitionBoothDesign]);
   return (
     <div>
-      <div className="grid grid-cols-3 w-[95%] mx-auto gap-5 place-content-center">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 w-[95%] mx-auto gap-5 place-content-center">
         {Array.isArray(boothdata) ? (
           boothdata?.map((item, index) => (
             <BoothCard key={index} dataBooth={item}></BoothCard>

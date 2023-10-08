@@ -8,7 +8,7 @@ const GamingCard = ({ Gametourdata }) => {
     <div>
       <div className="bg-white p-5 flex flex-col h-full">
         <div className="bg-blue-800 rounded-lg flex-grow">
-          <h1 className="font-semibold text-2xl p-5 text-center text-white">
+          <h1 className="font-semibold lg:text-2xl text-xl p-5 text-center text-white">
             {name}
           </h1>
         </div>

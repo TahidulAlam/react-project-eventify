@@ -12,7 +12,7 @@ const GamingData = ({ data }) => {
 
   return (
     <div>
-      <div className="grid grid-cols-3 gap-3 p-5">
+      <div className="grid lg:grid-cols-3 grid-cols-1 gap-3 p-5">
         {Array.isArray(gdata) ? (
           gdata?.map((item, index) => (
             <GamingCard key={index} Gametourdata={item}></GamingCard>

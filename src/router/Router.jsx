@@ -14,11 +14,13 @@ import ServiceDetails from "../pages/home/service/serviceDetails/ServiceDetails"
 import Events from "../pages/events/Events";
 import Services from "../pages/services/Services";
 import PrivateRoute from "./PrivateRoute";
+import Error from "../pages/error/Error";
 
 const myRouter = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: "/",

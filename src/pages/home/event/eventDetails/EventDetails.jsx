@@ -35,13 +35,15 @@ const EventDetails = () => {
         <Clock deadline={event_date}></Clock>
       </div>
 
-      <div className="grid grid-cols-2 gap-3 place-content-start w-[95%] mx-auto my-5">
+      <div className="grid lg:grid-cols-2 grid-cols-1 gap-3 place-content-start w-[95%] mx-auto my-5">
         <div>
           <img className="rounded-lg" src={image_link} alt="" />
         </div>
         <div>
           <div className="text-start">
-            <h1 className="font-bold text-3xl text-start">{tagline}</h1>
+            <h1 className="font-bold lg:text-3xl text-xl text-start">
+              {tagline}
+            </h1>
             <p className="text-slate-700 p-1">{description}</p>
             <div className="text-start">
               <div className="p-3">

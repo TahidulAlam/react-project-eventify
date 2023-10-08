@@ -13,7 +13,7 @@ const PromotionData = ({ data }) => {
 
   return (
     <div>
-      <div className="grid grid-cols-3 text-center p-5 rounded-xl gap-5">
+      <div className="grid lg:grid-cols-3 grid-cols-1 text-center p-5 rounded-xl gap-5">
         {Array.isArray(pdata) ? (
           pdata?.map((item, index) => (
             <PromotionCard key={index} dataPromotion={item}></PromotionCard>
