@@ -1,52 +1,322 @@
 {
     "services": [
       {
-        "id": 1,
+        "id": "1",
         "title": "Event Venue Rental",
         "description": "Rent a spacious venue for your gaming convention, tech conference, or expo.",
         "price": "$5,000 - $10,000",
         "details": "Includes access to a fully-equipped venue with seating, audiovisual equipment, and catering options.",
-        "image": "https://i.ibb.co/ryXvY13/service-2.jpg"
+        "image": "https://i.ibb.co/ryXvY13/service-2.jpg",
+          "eventVenueRental": {
+            "Dhaka": [
+              {
+                "venueName": "Dhaka Convention Center",
+                "capacity": "500",
+                "location": "Dhaka, Bangladesh",
+                "priceRange": "$8300"
+              },
+              {
+                "venueName": "Grand Plaza Hall",
+                "capacity": "300",
+                "location": "Dhaka, Bangladesh",
+                "priceRange": "$5000"
+              }
+            ],
+            "Chittagong": [
+              {
+                "venueName": "Chittagong Grand Ballroom",
+                "capacity": "800",
+                "location": "Chittagong, Bangladesh",
+                "priceRange": "$3000"
+              },
+              {
+                "venueName": "Golden Beach Resort",
+                "capacity": "150",
+                "location": "Chittagong, Bangladesh",
+                "priceRange": "$2900"
+              }
+            ],
+            "Sylhet": [
+              {
+                "venueName": "Sylhet International Conference Center",
+                "capacity": "600",
+                "location": "Sylhet, Bangladesh",
+                "priceRange": "$2700"
+              },
+              {
+                "venueName": "Sylhet Grand Garden",
+                "capacity": "200",
+                "location": "Sylhet, Bangladesh",
+                "normalPriceRange": "$2600"
+              }
+            ]
+          }
+        
       },
       {
-        "id": 2,
+        "id": "2",
         "title": "Event Promotion Package",
         "description": "Boost attendance and visibility with our event promotion package.",
         "price": "$2,000 - $5,000",
         "details": "Includes social media promotion, email marketing, and targeted advertising.",
-        "image": "https://i.ibb.co/xHvLM8j/service-1.jpg"
+        "image": "https://i.ibb.co/xHvLM8j/service-1.jpg",
+        
+          "eventPromotionPackages": [
+            {
+              "name": "Low",
+              "budget": "$500",
+              "description": "Basic promotion package for your event on social media."
+            },
+            {
+              "name": "Medium",
+              "budget": "$1,000",
+              "description": "Intermediate promotion package including advanced social media marketing."
+            },
+            {
+              "name": "Pro",
+              "budget": "$2,000",
+              "description": "Comprehensive promotion package with social media, email marketing, and SEO services."
+            }
+          ]
+        
       },
       {
-        "id": 3,
+        "id": "3",
         "title": "Hackathon Support",
         "description": "Get expert support for organizing and hosting hackathons.",
         "price": "$3,000 - $7,000",
         "details": "Includes mentorship, technical support, and prize sponsorship.",
-        "image": "https://i.ibb.co/r6P0D0X/service-1.png"
+        "image": "https://i.ibb.co/r6P0D0X/service-1.png",
+        "hackathonSupport": [
+            {
+              "name": "Bronze Sponsorship",
+              "description": "Basic sponsorship package with logo placement and recognition during the hackathon.",
+              "benefits": [
+                "Logo placement on event website",
+                "Recognition during opening and closing ceremonies",
+                "Acknowledgment in event promotional materials"
+              ],
+              "contactEmail": "sponsorship@hackathonexample.com",
+              "contactPhone": "+1 (123) 456-7890"
+            },
+            {
+              "name": "Silver Sponsorship",
+              "description": "Enhanced sponsorship package with booth space and additional benefits.",
+              "benefits": [
+                "All Bronze Sponsorship benefits",
+                "Exhibition booth space at the hackathon venue",
+                "Access to participant resumes",
+                "Social media mentions"
+              ],
+              "contactEmail": "sponsorship@hackathonexample.com",
+              "contactPhone": "+1 (123) 456-7890"
+            },
+            {
+              "name": "Gold Sponsorship",
+              "description": "Premium sponsorship package with exclusive benefits and recognition.",
+              "benefits": [
+                "All Silver Sponsorship benefits",
+                "Exclusive sponsor of a hackathon challenge",
+                "Customized branding opportunities",
+                "VIP access to hackathon events",
+                "Priority in event marketing materials"
+              ],
+              "contactEmail": "sponsorship@hackathonexample.com",
+              "contactPhone": "+1 (123) 456-7890"
+            }
+          ]        
       },
       {
-        "id": 4,
+        "id": "4",
         "title": "Gaming Tournament Setup",
         "description": "Organize and host gaming tournaments with our tournament setup service.",
         "price": "$1,500 - $4,000",
         "details": "Includes tournament bracket management, gaming consoles, and referees.",
-        "image": "https://i.ibb.co/5WfdH3t/service-4.jpg"
+        "image": "https://i.ibb.co/5WfdH3t/service-4.jpg",
+          "gamingTournamentSetup": [
+            {
+              "name": "Basic Setup",
+              "description": "Essential setup for a gaming tournament with the necessary equipment.",
+              "equipment": [
+                "Gaming consoles (e.g., PlayStation, Xbox)",
+                "Gaming PCs with high-performance specs",
+                "Monitors and displays",
+                "Game controllers and peripherals",
+                "Local area network (LAN) setup"
+              ],
+              "services": [
+                "Event planning and coordination",
+                "Technical support and troubleshooting",
+                "Prize distribution assistance"
+              ],
+              "contactEmail": "info@gamingtournaments.com",
+              "contactPhone": "+1 (123) 456-7890"
+            },
+            {
+              "name": "Advanced Setup",
+              "description": "Enhanced setup with more gaming stations and live streaming capabilities.",
+              "equipment": [
+                "Additional gaming consoles and PCs",
+                "High-quality audio and video equipment",
+                "Streaming and recording equipment",
+                "Virtual reality (VR) setups",
+                "Spectator seating and commentary booth"
+              ],
+              "services": [
+                "Dedicated event manager",
+                "Live streaming production",
+                "On-site gaming experts and referees",
+                "Custom tournament branding"
+              ],
+              "contactEmail": "info@gamingtournaments.com",
+              "contactPhone": "+1 (123) 456-7890"
+            },
+            {
+              "name": "Custom Setup",
+              "description": "Tailored setup based on specific tournament requirements and preferences.",
+              "equipment": [
+                "Customized gaming rigs and hardware",
+                "Unique tournament formats and rules",
+                "Personalized branding and theming"
+              ],
+              "services": [
+                "Full-service event planning and execution",
+                "Professional commentary and analysis",
+                "Custom trophy design and production"
+              ],
+              "contactEmail": "info@gamingtournaments.com",
+              "contactPhone": "+1 (123) 456-7890"
+            }
+          ]
+
+        
       },
       {
-        "id": 5,
+        "id": "5",
         "title": "Tech Conference Speaker Booking",
         "description": "Book industry experts and keynote speakers for your tech conference.",
         "price": "$2,500 - $6,000",
         "details": "Includes speaker selection, logistics, and presentation coordination.",
-        "image": "https://i.ibb.co/f18xd7H/service-3.jpg"
+        "image": "https://i.ibb.co/f18xd7H/service-3.jpg",
+          "techConferenceSpeakerBooking": [
+            {
+              "speakerName": "John Doe",
+              "topic": "Artificial Intelligence and Machine Learning",
+              "availability": "Available",
+              "fee": "$5,000",
+              "contactEmail": "john.doe@example.com",
+              "contactPhone": "+1 (123) 456-7890",
+              "image": "https://i.ibb.co/dc1GkYp/profile-1.jpg"
+            },
+            {
+              "speakerName": "Jane Smith",
+              "topic": "Cybersecurity Trends",
+              "availability": "Booked",
+              "fee": "$7,500",
+              "contactEmail": "jane.smith@example.com",
+              "contactPhone": "+1 (234) 567-8901",
+              "image": "https://i.ibb.co/rs3bdTb/profile-2.jpg"
+            },
+            {
+              "speakerName": "David Wilson",
+              "topic": "Cloud Computing and Infrastructure",
+              "availability": "Available",
+              "fee": "$6,000",
+              "contactEmail": "david.wilson@example.com",
+              "contactPhone": "+1 (345) 678-9012",
+              "image": "https://i.ibb.co/qC4b1nC/profile-3.jpg"
+            },
+            {
+              "speakerName": "Sar Johnson",
+              "topic": "Blockchain Technology",
+              "availability": "Available",
+              "fee": "$6,500",
+              "contactEmail": "sarah.johnson@example.com",
+              "contactPhone": "+1 (456) 789-0123",
+              "image": "https://i.ibb.co/JjYJxtm/profile-4.jpg"
+            },
+            {
+              "speakerName": "David Wilson",
+              "topic": "Cloud Computing and Infrastructure",
+              "availability": "Available",
+              "fee": "$6,000",
+              "contactEmail": "david.wilson@example.com",
+              "contactPhone": "+1 (345) 678-9012",
+              "image": "https://i.ibb.co/4PrsPvB/profile-5.jpg"
+            },
+            {
+              "speakerName": "Jane Smith",
+              "topic": "Cybersecurity Trends",
+              "availability": "Booked",
+              "fee": "$7,500",
+              "contactEmail": "jane.smith@example.com",
+              "contactPhone": "+1 (234) 567-8901",
+              "image": "https://i.ibb.co/ydzLdSB/profile-6.jpg"
+            }
+          ]
+        
       },
       {
-        "id": 6,
+        "id": "6",
         "title": "Exhibition Booth Design",
         "description": "Design and set up eye-catching exhibition booths for your expo.",
         "price": "$1,000 - $3,000",
         "details": "Includes booth design, branding, and setup.",
-        "image": "https://i.ibb.co/wN0PR6j/service-5.jpg"
+        "image": "https://i.ibb.co/wN0PR6j/service-5.jpg",
+        "exhibitionBoothDesign": [
+          {
+            "boothName": "Standard Booth",
+            "description": "A basic booth design with essential features for exhibitions.",
+            "features": [
+              "Standard booth structure",
+              "Basic branding and signage",
+              "Table and chairs",
+              "Basic lighting"
+            ],
+            "contactEmail": "info@boothdesignexample.com",
+            "contactPhone": "+1 (123) 456-7890",
+            "image": "https://example.com/images/standard_booth.jpg"
+          },
+          {
+            "boothName": "Custom Booth",
+            "description": "Fully customized booth design tailored to your brand and requirements.",
+            "features": [
+              "Unique booth structure and layout",
+              "Custom branding and graphics",
+              "Furniture and decor to match your brand",
+              "Advanced lighting and audiovisual setup"
+            ],
+            "contactEmail": "info@boothdesignexample.com",
+            "contactPhone": "+1 (234) 567-8901",
+            "image": "https://example.com/images/custom_booth.jpg"
+          },
+          {
+            "boothName": "Interactive Booth",
+            "description": "Booth design with interactive elements to engage visitors.",
+            "features": [
+              "Interactive displays and kiosks",
+              "Engaging multimedia presentations",
+              "Gamification elements",
+              "Live demonstrations"
+            ],
+            "contactEmail": "info@boothdesignexample.com",
+            "contactPhone": "+1 (345) 678-9012",
+            "image": "https://example.com/images/interactive_booth.jpg"
+          },
+          {
+            "boothName": "Green Booth",
+            "description": "Eco-friendly booth design using sustainable materials and practices.",
+            "features": [
+              "Environmentally friendly materials",
+              "Energy-efficient lighting",
+              "Recycling and waste reduction initiatives",
+              "Green messaging and branding"
+            ],
+            "contactEmail": "info@boothdesignexample.com",
+            "contactPhone": "+1 (456) 789-0123",
+            "image": "https://example.com/images/green_booth.jpg"
+          }
+        ]
       }
     ]
   }

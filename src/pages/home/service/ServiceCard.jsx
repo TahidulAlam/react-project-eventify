@@ -1,12 +1,13 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from "react";
+import { Link } from "react-router-dom";
 
 const ServiceCard = ({ svData }) => {
-  const { title, description, price, details, image } = svData;
+  const { title, description, price, details, image, id } = svData;
   return (
     <div>
-      <div className="card w-96 bg-base-100 shadow-xl h-[440px] flex felx-col justify-around">
+      <div className="card w-auto bg-base-100  h-[440px] flex felx-col justify-around mb-5">
         <figure className="px-10 pt-10">
           <img
             src={image}
@@ -23,7 +24,12 @@ const ServiceCard = ({ svData }) => {
           </div>
 
           <div className="card-actions">
-            <button className="btn btn-primary">Buy Now</button>
+            <Link
+              className="btn btn-outline bg-blue-800 text-white "
+              to={`/servicedetails/${id}`}
+            >
+              Buy Now
+            </Link>
           </div>
         </div>
       </div>

@@ -2,19 +2,39 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { Link } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
+import {
+  isValidEmail,
+  isValidPassword,
+} from "../../components/validation/validation";
+
+import SocialAuth from "../../components/socialAuth/SocialAuth";
 
 const Login = () => {
+  const { signIn } = useAuth();
+  const handleSignIn = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    if (isValidEmail(email)) {
+      signIn(email, password)
+        .then(() => alert("log in successfullly"))
+        .catch((err) => console.log(err));
+    } else {
+      return alert("not a valid input");
+    }
+  };
   return (
     <div>
       <div
         className="relative flex flex-col justify-center min-h-screen
-      overflow-hidden"
+      overflow-hidden bg-slate-100"
       >
         <div className="w-full p-6 m-auto bg-white rounded-md shadow-md lg:max-w-xl">
           <h1 className="text-3xl font-semibold text-center text-blue-700 underline">
             Sign in
           </h1>
-          <form className="mt-6">
+          <form className="mt-6" onSubmit={handleSignIn}>
             <div className="mb-2">
               <label
                 htmlFor="email"
@@ -60,6 +80,7 @@ const Login = () => {
               Sign up{" "}
             </Link>
           </p>
+          <SocialAuth></SocialAuth>
         </div>
       </div>
     </div>

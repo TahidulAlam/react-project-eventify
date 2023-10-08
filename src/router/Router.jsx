@@ -9,6 +9,8 @@ import Contact from "../pages/contact/Contact";
 import Blog from "../pages/blog/Blog";
 import Login from "../pages/login/Login";
 import Registration from "../pages/registration/Registration";
+import EventDetails from "../pages/home/event/eventDetails/EventDetails";
+import ServiceDetails from "../pages/home/service/serviceDetails/ServiceDetails";
 
 const myRouter = createBrowserRouter([
   {
@@ -51,6 +53,16 @@ const myRouter = createBrowserRouter([
       {
         path: "/registration",
         element: <Registration></Registration>,
+      },
+      {
+        path: "/eventdetails/:id",
+        element: <EventDetails></EventDetails>,
+        loader: () => fetch("../../src/assets/data/events-data.json"),
+      },
+      {
+        path: "/servicedetails/:id",
+        element: <ServiceDetails></ServiceDetails>,
+        loader: () => fetch("../../src/assets/data/service-data.json"),
       },
     ],
   },

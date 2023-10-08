@@ -1,10 +1,12 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from "react";
+import { Link } from "react-router-dom";
 
 const EventCard = ({ evCarddata }) => {
   //   console.log(evCarddata);
   const {
+    id,
     title,
     tagline,
     image_link,
@@ -12,11 +14,10 @@ const EventCard = ({ evCarddata }) => {
     entry_fee,
     description,
   } = evCarddata;
-  console.log(title);
   return (
     <div>
       <div>
-        <div className="card card-compact w-96 bg-base-100 shadow-xl h-[420px]">
+        <div className="card card-compact w-auto bg-base-100 h-[420px]">
           <figure>
             <img src={image_link} alt="event" />
           </figure>
@@ -27,7 +28,12 @@ const EventCard = ({ evCarddata }) => {
             </div>
             <p>{description.slice(0, 100)}...</p>
             <div className="card-actions justify-end">
-              <button className="btn btn-primary">Join Now</button>
+              <Link
+                className="btn btn-outline bg-blue-800 text-white "
+                to={`/eventdetails/${id}`}
+              >
+                Join Now
+              </Link>
             </div>
           </div>
         </div>

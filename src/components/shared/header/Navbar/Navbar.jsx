@@ -2,10 +2,11 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AiOutlineFieldTime } from "react-icons/ai";
+
 const Navbar = () => {
   return (
     <div>
-      <div className="navbar bg-blue-800 z-50 max-w-6xl mx-auto text-white">
+      <div className="navbar bg-blue-800 z-50 max-w-7xl mx-auto text-white">
         <div className="navbar w-[50%] flex-row lg:justify-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -31,9 +32,8 @@ const Navbar = () => {
               <li>
                 <NavLink
                   to={"/news"}
-                  className={({ isActive }) =>
-                    isActive ? "text-blue-700 bg-white" : " "
-                  }
+                  activeClassName="bg-white text-blue-700"
+                  className="text-white"
                 >
                   News
                 </NavLink>
@@ -41,9 +41,8 @@ const Navbar = () => {
               <li>
                 <NavLink
                   to={"/event"}
-                  className={({ isActive }) =>
-                    isActive ? "text-blue-700 bg-white" : " "
-                  }
+                  activeClassName="bg-white text-blue-700"
+                  className="text-white"
                 >
                   Event
                 </NavLink>
@@ -51,9 +50,8 @@ const Navbar = () => {
               <li>
                 <NavLink
                   to={"/service"}
-                  className={({ isActive }) =>
-                    isActive ? "text-blue-700 bg-white" : " "
-                  }
+                  activeClassName="bg-white text-blue-700"
+                  className="text-white"
                 >
                   Service
                 </NavLink>
@@ -61,9 +59,8 @@ const Navbar = () => {
               <li>
                 <NavLink
                   to={"/blog"}
-                  className={({ isActive }) =>
-                    isActive ? "text-blue-700 bg-white" : " "
-                  }
+                  activeClassName="bg-white text-blue-700"
+                  className="text-white"
                 >
                   Blog
                 </NavLink>
@@ -71,9 +68,8 @@ const Navbar = () => {
               <li>
                 <NavLink
                   to={"/contact"}
-                  className={({ isActive }) =>
-                    isActive ? "text-blue-700 bg-white" : " "
-                  }
+                  activeClassName="bg-white text-blue-700"
+                  className="text-white"
                 >
                   Contact
                 </NavLink>
@@ -88,24 +84,61 @@ const Navbar = () => {
           </div>
         </div>
         <div className="navbar w-[50%] flex-row lg:justify-around justify-end">
-          <ul className="menu menu-horizontal hidden lg:flex px-1 ">
+          <ul className="menu menu-horizontal hidden lg:flex px-1">
             <li>
-              <NavLink to={"/"}>home</NavLink>
+              <NavLink
+                to={"/"}
+                exact
+                activeClassName="bg-white text-blue-700"
+                className="text-white"
+              >
+                home
+              </NavLink>
             </li>
             <li>
-              <NavLink to={"/about"}>about</NavLink>
+              <NavLink
+                to={"/about"}
+                activeClassName="bg-white text-blue-700"
+                className="text-white"
+              >
+                about
+              </NavLink>
             </li>
             <li>
-              <NavLink to={"/event"}>Event</NavLink>
+              <NavLink
+                to={"/event"}
+                activeClassName="bg-white text-blue-700"
+                className="text-white"
+              >
+                Event
+              </NavLink>
             </li>
             <li>
-              <NavLink to={"/service"}>Service</NavLink>
+              <NavLink
+                to={"/service"}
+                activeClassName="bg-white text-blue-700"
+                className="text-white"
+              >
+                Service
+              </NavLink>
             </li>
             <li>
-              <NavLink to={"/blog"}>Blog</NavLink>
+              <NavLink
+                to={"/blog"}
+                activeClassName="bg-white text-blue-700"
+                className="text-white"
+              >
+                Blog
+              </NavLink>
             </li>
             <li>
-              <NavLink to={"/contact"}>Contact</NavLink>
+              <NavLink
+                to={"/contact"}
+                activeClassName="bg-white text-blue-700"
+                className="text-white"
+              >
+                Contact
+              </NavLink>
             </li>
           </ul>
           <Link

@@ -1,0 +1,28 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
+import React, { useEffect, useState } from "react";
+import GamingCard from "./GamingCard";
+
+const GamingData = ({ data }) => {
+  const [gdata, setGdata] = useState({});
+  const { gamingTournamentSetup } = data;
+  useEffect(() => {
+    setGdata(gamingTournamentSetup);
+  }, [gamingTournamentSetup]);
+
+  return (
+    <div>
+      <div className="grid grid-cols-3 gap-3 p-5">
+        {Array.isArray(gdata) ? (
+          gdata?.map((item, index) => (
+            <GamingCard key={index} Gametourdata={item}></GamingCard>
+          ))
+        ) : (
+          <div>No data available</div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default GamingData;
