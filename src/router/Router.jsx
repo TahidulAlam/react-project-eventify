@@ -11,6 +11,9 @@ import Login from "../pages/login/Login";
 import Registration from "../pages/registration/Registration";
 import EventDetails from "../pages/home/event/eventDetails/EventDetails";
 import ServiceDetails from "../pages/home/service/serviceDetails/ServiceDetails";
+import Events from "../pages/events/Events";
+import Services from "../pages/services/Services";
+import PrivateRoute from "./PrivateRoute";
 
 const myRouter = createBrowserRouter([
   {
@@ -43,6 +46,28 @@ const myRouter = createBrowserRouter([
         element: <Blog></Blog>,
       },
       {
+        path: "/event",
+        element: <Events></Events>,
+        loader: async () => {
+          const eventsResponse = await fetch(
+            "../../src/assets/data/events-data.json"
+          );
+          const eventsData = await eventsResponse.json();
+          return { eventsData };
+        },
+      },
+      {
+        path: "/services",
+        element: <Services></Services>,
+        loader: async () => {
+          const serviceResponse = await fetch(
+            "../../src/assets/data/service-data.json"
+          );
+          const serviceData = await serviceResponse.json();
+          return { serviceData };
+        },
+      },
+      {
         path: "/contact",
         element: <Contact></Contact>,
       },
@@ -56,12 +81,20 @@ const myRouter = createBrowserRouter([
       },
       {
         path: "/eventdetails/:id",
-        element: <EventDetails></EventDetails>,
+        element: (
+          <PrivateRoute>
+            <EventDetails></EventDetails>
+          </PrivateRoute>
+        ),
         loader: () => fetch("../../src/assets/data/events-data.json"),
       },
       {
         path: "/servicedetails/:id",
-        element: <ServiceDetails></ServiceDetails>,
+        element: (
+          <PrivateRoute>
+            <ServiceDetails></ServiceDetails>
+          </PrivateRoute>
+        ),
         loader: () => fetch("../../src/assets/data/service-data.json"),
       },
     ],

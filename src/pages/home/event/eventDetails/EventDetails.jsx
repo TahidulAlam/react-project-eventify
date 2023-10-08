@@ -55,9 +55,30 @@ const EventDetails = () => {
                 <p className="">Entry Fee: {entry_fee}</p>
               </div>
               <div className="flex items-start justify-start ">
-                <button className="btn btn-outline btn-lg text-white hover:text-blue-800 hover:bg-white bg-blue-800  hover:border-blue-800 ">
+                {/* <button className=""></button> */}
+                <button
+                  className="btn btn-outline btn-lg text-white hover:text-blue-800 hover:bg-white bg-blue-800  hover:border-blue-800 "
+                  onClick={() =>
+                    document.getElementById("my_modal_5").showModal()
+                  }
+                >
                   Registration Now
                 </button>
+                <dialog
+                  id="my_modal_5"
+                  className="modal modal-bottom sm:modal-middle"
+                >
+                  <div className="modal-box">
+                    <h1 className="text-center font-bold py-4 text-4xl text-blue-800">
+                      {title}
+                    </h1>
+                    <div className="modal-action">
+                      <form method="dialog">
+                        <button className="btn">Close</button>
+                      </form>
+                    </div>
+                  </div>
+                </dialog>
               </div>
             </div>
           </div>

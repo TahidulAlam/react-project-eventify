@@ -17,11 +17,11 @@ const SocialAuth = () => {
   return (
     <div>
       <div className="grid lg:grid-cols-2 grid-cols-1  pt-4  gap-3">
-        <button className="btn btn-outline hover:bg-blue-800 border-blue-800 text-blue-800 ">
-          <AiFillGoogleCircle
-            className="text-3xl"
-            onClick={() => handleSocialSignIn(signInWithGoogle)}
-          />
+        <button
+          className="btn btn-outline hover:bg-blue-800 border-blue-800 text-blue-800 "
+          onClick={() => handleSocialSignIn(signInWithGoogle)}
+        >
+          <AiFillGoogleCircle className="text-3xl" />
           Log in with Google
         </button>
         <button className="btn btn-outline hover:bg-blue-800  border-blue-800 text-blue-800">

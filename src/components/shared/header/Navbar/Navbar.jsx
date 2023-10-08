@@ -2,12 +2,24 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AiOutlineFieldTime } from "react-icons/ai";
+import useAuth from "../../../../hooks/useAuth";
+import { signOut } from "firebase/auth";
 
 const Navbar = () => {
+  const { user, signInOut } = useAuth();
+  // const handleSignOut = (signInOut) => {
+  //   signOut(signInOut)
+  //     .then(() => {
+  //       console.log("sign out successfully");
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
   return (
     <div>
       <div className="navbar bg-blue-800 z-50 max-w-7xl mx-auto text-white">
-        <div className="navbar w-[50%] flex-row lg:justify-start">
+        <div className="navbar w-[40%] flex-row lg:justify-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg
@@ -49,11 +61,11 @@ const Navbar = () => {
               </li>
               <li>
                 <NavLink
-                  to={"/service"}
+                  to={"/services"}
                   activeClassName="bg-white text-blue-700"
                   className="text-white"
                 >
-                  Service
+                  services
                 </NavLink>
               </li>
               <li>
@@ -83,7 +95,7 @@ const Navbar = () => {
             </a>
           </div>
         </div>
-        <div className="navbar w-[50%] flex-row lg:justify-around justify-end">
+        <div className="navbar w-[60%] flex-row lg:justify-around justify-end">
           <ul className="menu menu-horizontal hidden lg:flex px-1">
             <li>
               <NavLink
@@ -115,11 +127,11 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to={"/service"}
+                to={"/services"}
                 activeClassName="bg-white text-blue-700"
                 className="text-white"
               >
-                Service
+                Services
               </NavLink>
             </li>
             <li>
@@ -141,12 +153,28 @@ const Navbar = () => {
               </NavLink>
             </li>
           </ul>
-          <Link
-            className="btn btn-outline bg-white text-blue-700"
-            to={"/login"}
-          >
-            Log In
-          </Link>
+          {user?.email ? (
+            <button
+              className="btn btn-outline bg-white text-blue-700 w-40"
+              onClick={signInOut}
+            >
+              <div className="avatar flex justify-center items-center gap-2">
+                <div className="avatar rounded-full">
+                  <div className="w-10">
+                    <img src={user.photoURL} alt="" />
+                  </div>
+                </div>
+                <h1 className="whitespace-nowrap">Log out</h1>
+              </div>
+            </button>
+          ) : (
+            <Link
+              to={"/login"}
+              className="btn btn-outline bg-white text-blue-700 w-40"
+            >
+              Log In
+            </Link>
+          )}
         </div>
       </div>
     </div>

@@ -4,27 +4,20 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const EventCard = ({ evCarddata }) => {
-  //   console.log(evCarddata);
-  const {
-    id,
-    title,
-    tagline,
-    image_link,
-    event_date_time,
-    entry_fee,
-    description,
-  } = evCarddata;
+  const { id, title, tagline, image_link, event_date, entry_fee, description } =
+    evCarddata;
   return (
     <div>
       <div>
-        <div className="card card-compact w-auto bg-base-100 h-[420px]">
+        <div className="card card-compact w-auto bg-base-100 h-[400px]">
           <figure>
             <img src={image_link} alt="event" />
           </figure>
+
           <div className="card-body">
-            <div className="flex justify-between">
+            <div className="flex justify-between items-center">
               <h2 className="card-title">{title}</h2>
-              <h1 className="whitespace-nowrap">{event_date_time}</h1>
+              <h1 className="whitespace-nowrap">{event_date}</h1>
             </div>
             <p>{description.slice(0, 100)}...</p>
             <div className="card-actions justify-end">
