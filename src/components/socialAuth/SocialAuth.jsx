@@ -1,17 +1,22 @@
 /* eslint-disable no-unused-vars */
+import { toast } from "react-hot-toast";
 import { AiFillGoogleCircle } from "react-icons/ai";
-import { BsFacebook } from "react-icons/bs";
+import { BsGithub } from "react-icons/bs";
 import React from "react";
 import useAuth from "../../hooks/useAuth";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const SocialAuth = () => {
-  const { signInWithGoogle } = useAuth();
+  const { signInWithGoogle, signInWithGithub } = useAuth();
+  const location = useLocation();
+  const navigate = useNavigate();
   const handleSocialSignIn = (media) => {
     media()
       .then(() => {
-        console.log("log in with goggle, successfully");
+        toast.success("Sign In seccessfully");
+        navigate(location.state ? location.state : "/");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => toast.error("invalid input"));
   };
 
   return (
@@ -24,9 +29,12 @@ const SocialAuth = () => {
           <AiFillGoogleCircle className="text-3xl" />
           Log in with Google
         </button>
-        <button className="btn btn-outline hover:bg-blue-800  border-blue-800 text-blue-800">
-          <BsFacebook className="text-3xl" />
-          Log in with Facebook
+        <button
+          className="btn btn-outline hover:bg-blue-800  border-blue-800 text-blue-800"
+          onClick={() => handleSocialSignIn(signInWithGithub)}
+        >
+          <BsGithub className="text-3xl" />
+          Log in with Github
         </button>
       </div>
     </div>

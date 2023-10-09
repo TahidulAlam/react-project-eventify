@@ -16,7 +16,12 @@ import Services from "../pages/services/Services";
 import PrivateRoute from "./PrivateRoute";
 import Error from "../pages/error/Error";
 
-const myRouter = createBrowserRouter([
+const fetchData = async (url) => {
+  const response = await fetch(url);
+  return response.json();
+};
+
+const routeConfig = [
   {
     path: "/",
     element: <MainLayout></MainLayout>,
@@ -26,15 +31,10 @@ const myRouter = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
         loader: async () => {
-          const eventsResponse = await fetch(
-            "../../src/assets/data/events-data.json"
-          );
-          const serviceResponse = await fetch(
-            "../../src/assets/data/service-data.json"
-          );
-
-          const eventsData = await eventsResponse.json();
-          const serviceData = await serviceResponse.json();
+          const [eventsData, serviceData] = await Promise.all([
+            fetchData("events-data.json"),
+            fetchData("service-data.json"),
+          ]);
 
           return { eventsData, serviceData };
         },
@@ -45,16 +45,17 @@ const myRouter = createBrowserRouter([
       },
       {
         path: "/blog",
-        element: <Blog></Blog>,
+        element: (
+          <PrivateRoute>
+            <Blog></Blog>,
+          </PrivateRoute>
+        ),
       },
       {
         path: "/event",
         element: <Events></Events>,
         loader: async () => {
-          const eventsResponse = await fetch(
-            "../../src/assets/data/events-data.json"
-          );
-          const eventsData = await eventsResponse.json();
+          const eventsData = await fetchData("events-data.json");
           return { eventsData };
         },
       },
@@ -62,16 +63,17 @@ const myRouter = createBrowserRouter([
         path: "/services",
         element: <Services></Services>,
         loader: async () => {
-          const serviceResponse = await fetch(
-            "../../src/assets/data/service-data.json"
-          );
-          const serviceData = await serviceResponse.json();
+          const serviceData = await fetchData("service-data.json");
           return { serviceData };
         },
       },
       {
         path: "/contact",
-        element: <Contact></Contact>,
+        element: (
+          <PrivateRoute>
+            <Contact></Contact>,
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",
@@ -88,7 +90,7 @@ const myRouter = createBrowserRouter([
             <EventDetails></EventDetails>
           </PrivateRoute>
         ),
-        loader: () => fetch("../../src/assets/data/events-data.json"),
+        loader: () => fetchData("/events-data.json"),
       },
       {
         path: "/servicedetails/:id",
@@ -97,10 +99,12 @@ const myRouter = createBrowserRouter([
             <ServiceDetails></ServiceDetails>
           </PrivateRoute>
         ),
-        loader: () => fetch("../../src/assets/data/service-data.json"),
+        loader: () => fetchData("/service-data.json"),
       },
     ],
   },
-]);
+];
+
+const myRouter = createBrowserRouter(routeConfig);
 
 export default myRouter;

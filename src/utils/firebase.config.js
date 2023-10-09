@@ -1,13 +1,13 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-
+const all = import.meta.env;
 const firebaseConfig = {
-  apiKey: "AIzaSyAvEIwyeYaojjOeSjtvAg2xnU8Y1ftxqZM",
-  authDomain: "eventify-project.firebaseapp.com",
-  projectId: "eventify-project",
-  storageBucket: "eventify-project.appspot.com",
-  messagingSenderId: "104280364473",
-  appId: "1:104280364473:web:0e276d735bd9e037d55268",
+  apiKey: all.VITE_apiKey,
+  authDomain: all.VITE_authDomain,
+  projectId: all.VITE_projectId,
+  storageBucket: all.VITE_storageBucket,
+  messagingSenderId: all.VITE_messagingSenderId,
+  appId: all.VITE_appId,
 };
 
 // Initialize Firebase

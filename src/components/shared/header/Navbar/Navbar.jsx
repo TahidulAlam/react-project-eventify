@@ -4,13 +4,12 @@ import { Link, NavLink } from "react-router-dom";
 import { AiOutlineFieldTime } from "react-icons/ai";
 import useAuth from "../../../../hooks/useAuth";
 import { signOut } from "firebase/auth";
-
 const Navbar = () => {
   const { user, signInOut } = useAuth();
   return (
     <div>
       <div className="navbar bg-blue-800 z-50 max-w-7xl mx-auto text-white">
-        <div className="navbar w-[40%] flex-row lg:justify-start">
+        <div className="navbar w-[30%] flex-row lg:justify-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg
@@ -33,27 +32,27 @@ const Navbar = () => {
               className="menu menu-lg dropdown-content mt-3 z-[120] p-2 bg-white rounded-box w-[250px]"
             >
               <li>
-                <NavLink to={"/"} className="text-black">
+                <NavLink to={"/"} className="text-blue-800">
                   Home
                 </NavLink>
               </li>
               <li>
-                <NavLink to={"/event"} className="text-black">
+                <NavLink to={"/event"} className="text-blue-800">
                   Event
                 </NavLink>
               </li>
               <li>
-                <NavLink to={"/services"} className="text-black">
+                <NavLink to={"/services"} className="text-blue-800">
                   services
                 </NavLink>
               </li>
               <li>
-                <NavLink to={"/blog"} className="text-black">
+                <NavLink to={"/blog"} className="text-blue-800">
                   Blog
                 </NavLink>
               </li>
               <li>
-                <NavLink to={"/contact"} className="text-black">
+                <NavLink to={"/contact"} className="text-blue-800">
                   Contact
                 </NavLink>
               </li>
@@ -68,7 +67,7 @@ const Navbar = () => {
             </Link>
           </div>
         </div>
-        <div className="navbar w-[60%] flex-row lg:justify-around justify-end">
+        <div className="navbar w-[70%] flex-row lg:justify-around justify-end">
           <ul className="menu menu-horizontal hidden lg:flex px-1">
             <li>
               <NavLink to={"/"} exact className="text-white">
@@ -102,23 +101,25 @@ const Navbar = () => {
             </li>
           </ul>
           {user?.email ? (
-            <button
-              className="btn btn-outline bg-white text-blue-700 w-40"
-              onClick={signInOut}
-            >
-              <div className="avatar flex justify-center items-center gap-2">
-                <div className="avatar rounded-full">
-                  <div className="w-10">
-                    <img src={user.photoURL} alt="" />
-                  </div>
+            <div className="avatar flex justify-center items-center gap-2">
+              <div className="avatar rounded-full border-white">
+                <div className="w-10">
+                  <img src={user.photoURL} alt={user.displayName} />
                 </div>
-                <h1 className="whitespace-nowrap">Log out</h1>
               </div>
-            </button>
+              <h1 className="whitespace-nowrap">{user.displayName}</h1>
+
+              <button
+                className="btn btn-outline bg-white text-blue-700"
+                onClick={signInOut}
+              >
+                <h1 className="whitespace-nowrap">Log out</h1>
+              </button>
+            </div>
           ) : (
             <Link
               to={"/login"}
-              className="btn btn-outline bg-white text-blue-700 w-40"
+              className="btn btn-outline bg-white text-blue-700 "
             >
               Log In
             </Link>

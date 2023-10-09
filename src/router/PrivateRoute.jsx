@@ -6,7 +6,8 @@ import { ThreeCircles } from "react-loader-spinner";
 import useAuth from "../hooks/useAuth";
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useAuth();
-  const loaction = useLocation();
+  const location = useLocation();
+  console.log(location);
   if (loading) {
     return (
       <div className="flex justify-center h-screen items-center">
@@ -26,7 +27,7 @@ const PrivateRoute = ({ children }) => {
     );
   }
   if (!user?.email) {
-    return <Navigate state={loaction.pathname} to="/login"></Navigate>;
+    return <Navigate state={location.pathname} to="/login"></Navigate>;
   }
   return children;
 };

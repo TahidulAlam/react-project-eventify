@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 // import React, { useContext } from "react";
 import { toast } from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import {
   isValidEmail,
@@ -12,24 +12,36 @@ import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Registration = () => {
-  const { createUser } = useAuth();
+  const { createUser, updateUser } = useAuth();
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-
+  const navigate = useNavigate();
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
   };
   const handleCreateUser = (e) => {
     e.preventDefault();
     const name = e.target.name.value;
+    const image = e.target.img.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
     if (isValidEmail(email) && isValidPassword(password)) {
       createUser(email, password)
-        .then(() => toast.success("account create seccessfully"))
-        .catch((err) => console.log(err));
+        .then(() => {
+          updateUser(name, image).then(() =>
+            toast.success("account create seccessfully")
+          );
+          navigate("/");
+        })
+        .catch((err) => toast.error({ err }));
     } else {
-      return toast.error("invalid input");
+      if (!isValidEmail(email)) {
+        return toast.error("invalid email");
+      } else if (!isValidPassword(password)) {
+        return toast.error("plz use strong password");
+      } else {
+        return toast.error("plz use strong password and proper mail");
+      }
     }
   };
   return (
@@ -56,6 +68,19 @@ const Registration = () => {
                 className="block w-full px-4 py-2 mt-2 text-blue-700 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Enter your full Nsame"
               />
+              <label
+                htmlFor="img"
+                className="block text-sm font-semibold text-gray-800"
+              >
+                Profile URL
+              </label>
+              <input
+                type="text"
+                name="img"
+                className="block w-full px-4 py-2 mt-2 text-blue-700 bg-white border rounded-md focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                placeholder="Enter your profile URL"
+              />
+
               <label
                 htmlFor="email"
                 className="block text-sm font-semibold text-gray-800"
@@ -98,6 +123,11 @@ const Registration = () => {
                   )}
                 </button>
               </div>
+            </div>
+            <div className="mt-6">
+              <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-blue-700 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+                Sign Up{" "}
+              </button>
             </div>
           </form>
 
