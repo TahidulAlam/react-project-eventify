@@ -32,27 +32,32 @@ const Navbar = () => {
               className="menu menu-lg dropdown-content mt-3 z-[120] p-2 bg-white rounded-box w-[250px]"
             >
               <li>
-                <NavLink to={"/"} className="text-blue-800">
-                  Home
+                <NavLink to={"/"} exact className="text-white">
+                  home
                 </NavLink>
               </li>
               <li>
-                <NavLink to={"/event"} className="text-blue-800">
+                <NavLink to={"/about"} className="text-white">
+                  about
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to={"/event"} className="text-white">
                   Event
                 </NavLink>
               </li>
               <li>
-                <NavLink to={"/services"} className="text-blue-800">
-                  services
+                <NavLink to={"/services"} className="text-white">
+                  Services
                 </NavLink>
               </li>
               <li>
-                <NavLink to={"/blog"} className="text-blue-800">
+                <NavLink to={"/blog"} className="text-white">
                   Blog
                 </NavLink>
               </li>
               <li>
-                <NavLink to={"/contact"} className="text-blue-800">
+                <NavLink to={"/contact"} className="text-white">
                   Contact
                 </NavLink>
               </li>
