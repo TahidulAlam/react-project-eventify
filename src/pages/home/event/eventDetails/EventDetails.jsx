@@ -30,8 +30,10 @@ const EventDetails = () => {
       <h1 className="text-center font-bold py-4 text-4xl text-blue-800">
         {title}
       </h1>
-      <div className="flex flex-row items-center justify-center">
-        <h1 className="text-center font-semibold text-xl">Event CountDown :</h1>
+      <div className="flex lg:flex-row flex-col justify-center items-center">
+        <h1 className="text-center font-semibold lg:text-xl text-lg ">
+          Event CountDown :
+        </h1>
         <Clock deadline={event_date}></Clock>
       </div>
 

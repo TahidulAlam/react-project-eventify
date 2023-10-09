@@ -35,7 +35,7 @@ const Clock = ({ deadline }) => {
 
   return (
     <div>
-      <div className="flex gap-5 justify-center items-center ">
+      <div className="flex text-base lg:text-xl lg:gap-5  gap-1 justify-center items-center">
         <div>{leading0(days)} Days</div>
         <div>{leading0(hours)} Hours</div>
         <div>{leading0(minutes)} Minutes</div>

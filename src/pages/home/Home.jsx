@@ -53,15 +53,24 @@ const Home = () => {
             <div className="grid lg:grid-cols-3 grid-cols-1 text-5xl gap-5">
               <div className="flex justify-center items-center bg-white p-16 rounded-lg flex-col gap-5">
                 <h1 className="text-lg">Total Attendence</h1>
-                <CountUp start={485} end={2850} duration={3}></CountUp>{" "}
+                <div>
+                  <CountUp start={1285} end={3850} duration={3}></CountUp>
+                  <span>++</span>{" "}
+                </div>
               </div>
               <div className="flex justify-center items-center bg-white p-16 rounded-lg flex-col gap-5">
                 <h1 className="text-lg">Total Campaign</h1>
-                <CountUp start={860} end={1250} duration={3}></CountUp>{" "}
+                <div>
+                  <CountUp start={160} end={950} duration={3}></CountUp>
+                  <span>++</span>{" "}
+                </div>
               </div>
               <div className="flex justify-center items-center bg-white p-16 rounded-lg flex-col gap-5">
                 <h1 className="text-lg">Total Partner</h1>
-                <CountUp start={700} end={250} duration={3}></CountUp>{" "}
+                <div>
+                  <CountUp start={200} end={350} duration={3}></CountUp>
+                  <span>++</span>{" "}
+                </div>
               </div>
             </div>
           </div>

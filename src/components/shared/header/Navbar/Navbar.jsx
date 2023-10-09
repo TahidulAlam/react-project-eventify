@@ -106,13 +106,15 @@ const Navbar = () => {
             </li>
           </ul>
           {user?.email ? (
-            <div className="avatar flex justify-center items-center gap-2">
+            <div className="avatar flex justify-center items-center gap-2 ">
               <div className="avatar rounded-full border-white">
                 <div className="w-10">
                   <img src={user.photoURL} alt={user.displayName} />
                 </div>
               </div>
-              <h1 className="whitespace-nowrap">{user.displayName}</h1>
+              <h1 className="whitespace-nowrap lg:block hidden">
+                {user.displayName}
+              </h1>
 
               <button
                 className="btn btn-outline bg-white text-blue-700"
